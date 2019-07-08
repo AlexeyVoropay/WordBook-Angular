@@ -7,17 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedLanguage">
-	<h2>{{selectedLanguage.name | uppercase}} - Подробно</h2>
-	<div><span>Идентификатор: </span>{{selectedLanguage.id}}</div>
-	<div>
-	<label>Наименование:
-		<input [(ngModel)]="selectedLanguage.name" placeholder="Наименование"/>
-	</label>
-	</div>
-	<div>
-	<label>Описание:
-		<input [(ngModel)]="selectedLanguage.description" placeholder="Описание"/>
-	</label>
-	</div>
-</div>
+<app-language-detail [language]="selectedLanguage"></app-language-detail>
