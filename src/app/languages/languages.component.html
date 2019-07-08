@@ -1,12 +1,23 @@
-<h2>{{language.name | uppercase}} - Подробно</h2>
-<div><span>Идентификатор: </span>{{language.id}}</div>
-<div>
-  <label>Наименование:
-    <input [(ngModel)]="language.name" placeholder="Наименование"/>
-  </label>
-</div>
-<div>
-  <label>Описание:
-    <input [(ngModel)]="language.description" placeholder="Описание"/>
-  </label>
+<h2>Языки</h2>
+<ul class="languages">
+  <li *ngFor="let language of languages" 
+	[class.selected]="language === selectedLanguage"
+	(click)="onSelect(language)">
+    <span class="badge">{{language.id}}</span> {{language.name}} ({{language.description}})
+  </li>
+</ul>
+
+<div *ngIf="selectedLanguage">
+	<h2>{{selectedLanguage.name | uppercase}} - Подробно</h2>
+	<div><span>Идентификатор: </span>{{selectedLanguage.id}}</div>
+	<div>
+	<label>Наименование:
+		<input [(ngModel)]="selectedLanguage.name" placeholder="Наименование"/>
+	</label>
+	</div>
+	<div>
+	<label>Описание:
+		<input [(ngModel)]="selectedLanguage.description" placeholder="Описание"/>
+	</label>
+	</div>
 </div>
