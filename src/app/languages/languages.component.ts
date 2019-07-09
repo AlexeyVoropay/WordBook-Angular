@@ -12,11 +12,12 @@ export class LanguagesComponent implements OnInit {
   languages: Language[];
 
   selectedLanguage: Language;
-  
+
   getLanguages(): void {
-	this.languages = this.languageService.getLanguages();
+	this.languageService.getLanguages()
+      .subscribe(languages => this.languages = languages);
   }
-  
+
   onSelect(language: Language): void {
 	this.selectedLanguage = language;
   }
