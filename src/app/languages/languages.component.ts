@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Language } from '../language';
-import { LANGUAGES } from '../mock-languages';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-languages',
@@ -9,17 +9,21 @@ import { LANGUAGES } from '../mock-languages';
 })
 export class LanguagesComponent implements OnInit {
 	
-  languages = LANGUAGES;
+  languages: Language[];
 
   selectedLanguage: Language;
+  
+  getLanguages(): void {
+	this.languages = this.languageService.getLanguages();
+  }
   
   onSelect(language: Language): void {
 	this.selectedLanguage = language;
   }
 
-  constructor() { 
-  }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
+	this.getLanguages();
   }
 }
