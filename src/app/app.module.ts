@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { LanguageDetailComponent } from './language-detail/language-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LanguagesComponent,
     LanguageDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
