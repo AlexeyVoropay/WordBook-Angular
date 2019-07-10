@@ -1,10 +1,8 @@
 <h2>Языки</h2>
 <ul class="languages">
-  <li *ngFor="let language of languages" 
-	[class.selected]="language === selectedLanguage"
-	(click)="onSelect(language)">
-    <span class="badge">{{language.id}}</span> {{language.name}} ({{language.description}})
+  <li *ngFor="let language of languages">
+    <a routerLink="/detail/{{language.id}}">
+      <span class="badge">{{language.id}}</span> {{language.name}} ({{language.description}})
+    </a>
   </li>
 </ul>
-
-<app-language-detail [language]="selectedLanguage"></app-language-detail>

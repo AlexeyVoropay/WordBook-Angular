@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Language } from '../language';
 import { LanguageService } from '../language.service';
 
@@ -11,20 +12,15 @@ export class LanguagesComponent implements OnInit {
 	
   languages: Language[];
 
-  selectedLanguage: Language;
-
-  getLanguages(): void {
-	this.languageService.getLanguages()
-      .subscribe(languages => this.languages = languages);
-  }
-
-  onSelect(language: Language): void {
-	this.selectedLanguage = language;
-  }
-
   constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
-	this.getLanguages();
+    this.getLanguages();
   }
+
+  getLanguages(): void {
+	  this.languageService.getLanguages()
+    .subscribe(languages => this.languages = languages);
+  }
+  
 }
