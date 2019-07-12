@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { LanguageSearchComponent } from './language-search/language-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     LanguagesComponent,
     LanguageDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    LanguageSearchComponent
   ],
   imports: [
     BrowserModule,

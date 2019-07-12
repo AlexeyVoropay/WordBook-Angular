@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Language } from './language';
 import { MessageService } from './message.service';
-
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +18,9 @@ export class LanguageService {
 	
   private languagesUrl = 'api/languages';  // URL to web api
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(
+	private http: HttpClient,
+	private messageService: MessageService) { }
 
   /** GET languages from the server */
   getLanguages(): Observable<Language[]> {
@@ -29,8 +30,22 @@ export class LanguageService {
       catchError(this.handleError<Language[]>('getLanguages', []))
     );
   }  
+
+  /** GET language by id. Return `undefined` when id not found */
+  getLanguageNo404<Data>(id: number): Observable<Language> {
+    const url = `${this.languagesUrl}/?id=${id}`;
+    return this.http.get<Language[]>(url)
+      .pipe(
+        map(languages => languages[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} language id=${id}`);
+        }),
+        catchError(this.handleError<Language>(`getLanguage id=${id}`))
+      );
+  }
   
-  /** GET hero by id. Will 404 if id not found */
+  /** GET language by id. Will 404 if id not found */
   getLanguage(id: number): Observable<Language> {
     const url = `${this.languagesUrl}/${id}`;
     return this.http.get<Language>(url).pipe(
@@ -39,7 +54,7 @@ export class LanguageService {
     );
   }
   
-  /** POST: add a new hero to the server */
+  /** POST: add a new language to the server */
 addLanguage (language: Language): Observable<Language> {
   return this.http.post<Language>(this.languagesUrl, language, httpOptions).pipe(
     tap((newLanguage: Language) => this.log(`added language w/ id=${newLanguage.id}`)),
@@ -51,7 +66,7 @@ addLanguage (language: Language): Observable<Language> {
 updateLanguage (language: Language): Observable<any> {
   return this.http.put(this.languagesUrl, language, httpOptions).pipe(
     tap(_ => this.log(`updated language id=${language.id}`)),
-    catchError(this.handleError<any>('languageHero'))
+    catchError(this.handleError<any>('updateLanguage'))
   );
 }
 
@@ -66,6 +81,17 @@ deleteLanguage (language: Language | number): Observable<Language> {
   );
 }
 
+/* GET languages whose name contains search term */
+searchLanguages(term: string): Observable<Language[]> {
+  if (!term.trim()) {
+    // if not search term, return empty language array.
+    return of([]);
+  }
+  return this.http.get<Language[]>(`${this.languagesUrl}/?name=${term}`).pipe(
+    tap(_ => this.log(`found languages matching "${term}"`)),
+    catchError(this.handleError<Language[]>('searchLanguages', []))
+  );
+}
   
    /**
    * Handle Http operation that failed.
@@ -87,7 +113,7 @@ deleteLanguage (language: Language | number): Observable<Language> {
     };
   }
   
-  /** Log a HeroService message with the MessageService */
+  /** Log a LanguageService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`LanguageService: ${message}`);
   }
