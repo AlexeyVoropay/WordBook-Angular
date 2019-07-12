@@ -33,4 +33,9 @@ export class LanguageDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.languageService.updateLanguage(this.language)
+      .subscribe(() => this.goBack());
+  }
 }

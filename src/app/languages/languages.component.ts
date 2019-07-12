@@ -22,5 +22,20 @@ export class LanguagesComponent implements OnInit {
 	  this.languageService.getLanguages()
     .subscribe(languages => this.languages = languages);
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.languageService.addLanguage({ name } as Language)
+      .subscribe(language => {
+        this.languages.push(language);
+      });
+  }
+
+  
+delete(language: Language): void {
+  this.languages = this.languages.filter(h => h !== language);
+  this.languageService.deleteLanguage(language).subscribe();
+}
   
 }
