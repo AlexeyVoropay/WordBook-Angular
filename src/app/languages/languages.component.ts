@@ -7,9 +7,8 @@ import { LanguageService } from '../language.service';
   selector: 'app-languages',
   templateUrl: './languages.component.html',
   styleUrls: ['./languages.component.css']
-})
-export class LanguagesComponent implements OnInit {
-	
+})  
+export class LanguagesComponent implements OnInit {	
   languages: Language[];
 
   constructor(private languageService: LanguageService) { }
@@ -36,6 +35,6 @@ export class LanguagesComponent implements OnInit {
 delete(language: Language): void {
   this.languages = this.languages.filter(h => h !== language);
   this.languageService.deleteLanguage(language).subscribe();
-}
-  
+  }
+
 }
