@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Language } from '../language';
+import { Language }         from '../language';
 import { LanguageService }  from '../language.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { LanguageService }  from '../language.service';
   templateUrl: './language-detail.component.html',
   styleUrls: ['./language-detail.component.css']
 })
+
 export class LanguageDetailComponent implements OnInit {
-	
-  language: Language;
+  @Input() language: Language;  
 
   constructor(
     private route: ActivatedRoute,
