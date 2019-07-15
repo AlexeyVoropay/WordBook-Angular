@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class LanguageService {
 	
-  private languagesUrl = 'api/languages';  // URL to web api
+  private languagesUrl = 'http://alexey.somee.com/api/languages';  // URL to web api
 
   constructor(
 	private http: HttpClient,
