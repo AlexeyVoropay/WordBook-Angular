@@ -58,7 +58,7 @@ export class LanguageService {
       // if not search term, return empty language array.
       return of([]);
     }
-    return this.http.get<Language[]>(`${this.languagesUrl}/?name=${term}`).pipe(
+    return this.http.get<Language[]>(`${this.languagesUrl}/?searchText=${term}`).pipe(
       tap(_ => this.log(`found languages matching "${term}"`)),
       catchError(this.handleError<Language[]>('searchLanguages', []))
     );

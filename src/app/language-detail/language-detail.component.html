@@ -5,6 +5,11 @@
     <label>Наименование:
       <input [(ngModel)]="language.name" placeholder="Наименование"/>
     </label>
+  </div>
+  <div>
+    <label>Описание:
+      <input [(ngModel)]="language.description" placeholder="Описание"/>
+    </label>
   </div>  
   <button (click)="goBack()">Назад</button>
   <button (click)="save()">Сохранить</button>
