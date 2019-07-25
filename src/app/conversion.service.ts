@@ -14,7 +14,8 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ConversionService {
 
-  private conversionsUrl = 'http://localhost:50473/api/conversions';  // URL to web api
+  // private conversionsUrl = 'http://localhost:50473/api/conversions';  // URL to web api
+  private conversionsUrl = 'http://alexey.somee.com/api/conversions';  // URL to web api
 
   constructor(
     private http: HttpClient,

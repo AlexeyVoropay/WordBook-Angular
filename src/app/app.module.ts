@@ -3,7 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
@@ -12,7 +12,9 @@ import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { LanguageDetailComponent }  from './language-detail/language-detail.component';
 import { LanguagesComponent }      from './languages/languages.component';
+import { LanguageLettersComponent }      from './languageLetters/languageLetters.component';
 import { ConversionsComponent }      from './conversions/conversions.component';
+import { ConversionDetailComponent }  from './conversion-detail/conversion-detail.component';
 import { LanguageSearchComponent }  from './language-search/language-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 
@@ -34,10 +36,12 @@ import { MessagesComponent }    from './messages/messages.component';
     AppComponent,
     DashboardComponent,
     LanguagesComponent,
+    LanguageLettersComponent,
     LanguageDetailComponent,
     MessagesComponent,
     LanguageSearchComponent,
-	ConversionsComponent
+    ConversionDetailComponent,
+	  ConversionsComponent
   ],
   bootstrap: [ AppComponent ]
 })

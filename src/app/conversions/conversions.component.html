@@ -12,7 +12,7 @@
 
 <ul class="conversions">
   <li *ngFor="let conversion of conversions">
-    <a routerLink="/detail/{{conversion.id}}">
+    <a routerLink="/conversions/{{conversion.id}}">
       <span class="badge">{{conversion.id}}</span> {{conversion.name}}
     </a>
     <button class="delete" title="delete conversion"
