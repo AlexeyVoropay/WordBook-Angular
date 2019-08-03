@@ -7,6 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { ConversionPair } from './conversionPair';
 import { MessageService } from './message.service';
 
+import * as globalConstants from './constants';
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -14,7 +16,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ConversionService {
 
-  private conversionsUrl = 'http://localhost:50473/api/conversions';  // URL to web api
+  private conversionsUrl = globalConstants.apiHost + 'conversions';  // URL to web api
 
   constructor(
     private http: HttpClient,
