@@ -13,6 +13,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { LanguageDetailComponent }  from './language-detail/language-detail.component';
 import { LanguagesComponent }      from './languages/languages.component';
 import { LanguageLettersComponent }      from './languageLetters/languageLetters.component';
+import { LanguageWordsComponent }      from './languageWords/languageWords.component';
 import { ConversionsComponent }      from './conversions/conversions.component';
 import { ConversionDetailComponent }  from './conversion-detail/conversion-detail.component';
 import { LanguageSearchComponent }  from './language-search/language-search.component';
@@ -37,6 +38,7 @@ import { MessagesComponent }    from './messages/messages.component';
     DashboardComponent,
     LanguagesComponent,
     LanguageLettersComponent,
+    LanguageWordsComponent,
     LanguageDetailComponent,
     MessagesComponent,
     LanguageSearchComponent,
