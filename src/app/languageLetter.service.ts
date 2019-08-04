@@ -32,6 +32,23 @@ export class LanguageLetterService {
       );
   }
 
+  /** GET language by id. Will 404 if id not found */
+  getLanguageLetter(id: number): Observable<LanguageLetter> {
+    const url = `${this.languageLettersUrl}/${id}`;
+    return this.http.get<LanguageLetter>(url).pipe(
+      tap(_ => this.log(`fetched languageLetter id=${id}`)),
+      catchError(this.handleError<LanguageLetter>(`getLanguageLetter id=${id}`))
+    );
+  }
+
+  /** PUT: update the language on the server */
+  updateLanguageLetter (languageLetter: LanguageLetter): Observable<any> {
+    return this.http.put(this.languageLettersUrl, languageLetter, httpOptions).pipe(
+      tap(_ => this.log(`updated languageLetter id=${languageLetter.id}`)),
+      catchError(this.handleError<any>('updateLanguageLetter'))
+    );
+  }
+
   // /** GET language by id. Return `undefined` when id not found */
   // getLanguageNo404<Data>(id: number): Observable<Language> {
   //   const url = `${this.languagesUrl}/?id=${id}`;

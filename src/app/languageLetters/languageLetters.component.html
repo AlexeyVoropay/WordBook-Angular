@@ -19,7 +19,7 @@
 
 <ul class="languageLetters">
   <li *ngFor="let letter of languageLetters">
-    <a routerLink="/letters/{{letter.id}}/">
+    <a routerLink="{{letter.id}}/">
       <span class="badge">{{letter.id}}</span> {{letter.name}}
     </a>
     <button class="delete" title="delete letter"

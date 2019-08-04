@@ -6,6 +6,7 @@ import { LanguageWordsComponent } from './languageWords/languageWords.component'
 import { ConversionsComponent } from './conversions/conversions.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LanguageDetailComponent } from './language-detail/language-detail.component';
+import { LanguageLetterDetailComponent } from './languageLetter-detail/languageLetter-detail.component';
 import { ConversionDetailComponent } from './conversion-detail/conversion-detail.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'languages/:id', component: LanguageDetailComponent },
   { path: 'languages', component: LanguagesComponent },
   { path: 'languages/:id/letters', component: LanguageLettersComponent },
+  { path: 'languages/:id/letters/:id', component: LanguageLetterDetailComponent },
   { path: 'languages/:id/words', component: LanguageWordsComponent },
   { path: 'conversions/:id', component: ConversionDetailComponent },
   { path: 'conversions', component: ConversionsComponent },    

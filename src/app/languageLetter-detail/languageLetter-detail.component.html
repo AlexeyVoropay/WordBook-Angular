@@ -1,0 +1,16 @@
+<div *ngIf="languageLetter">
+  <h2>{{languageLetter.name | uppercase}} - Подробно</h2>
+  <div><span>Идентификатор: </span>{{languageLetter.id}}</div>
+  <div>
+    <label>Наименование:
+      <input [(ngModel)]="languageLetter.name" placeholder="Наименование"/>
+    </label>
+  </div>
+  <div>
+    <label>Описание:
+      <input [(ngModel)]="languageLetter.description" placeholder="Описание"/>
+    </label>
+  </div>  
+  <button (click)="goBack()">Назад</button>
+  <button (click)="save()">Сохранить</button>
+</div>

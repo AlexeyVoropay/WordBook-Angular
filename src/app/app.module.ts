@@ -11,6 +11,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { LanguageDetailComponent }  from './language-detail/language-detail.component';
+import { LanguageLetterDetailComponent }  from './languageLetter-detail/languageLetter-detail.component';
 import { LanguagesComponent }      from './languages/languages.component';
 import { LanguageLettersComponent }      from './languageLetters/languageLetters.component';
 import { LanguageWordsComponent }      from './languageWords/languageWords.component';
@@ -40,6 +41,7 @@ import { MessagesComponent }    from './messages/messages.component';
     LanguageLettersComponent,
     LanguageWordsComponent,
     LanguageDetailComponent,
+    LanguageLetterDetailComponent,
     MessagesComponent,
     LanguageSearchComponent,
     ConversionDetailComponent,
