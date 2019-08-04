@@ -12,7 +12,7 @@ import { LanguageService }  from '../language.service';
 })
 
 export class LanguageDetailComponent implements OnInit {
-  @Input() language: Language;  
+  @Input() language: Language;
 
   constructor(
     private route: ActivatedRoute,

@@ -1,16 +1,66 @@
 <div *ngIf="languageLetter">
   <h2>{{languageLetter.name | uppercase}} - Подробно</h2>
-  <div><span>Идентификатор: </span>{{languageLetter.id}}</div>
+  <div><small><span>Идентификатор: </span>{{languageLetter.id}}</small></div>
+  <div>
+    <label>Номер:
+      <input [(ngModel)]="languageLetter.number" placeholder="Номер"/>
+    </label>
+  </div>
   <div>
     <label>Наименование:
       <input [(ngModel)]="languageLetter.name" placeholder="Наименование"/>
     </label>
   </div>
+
+  <div>
+    <label>Величина:
+      <input [(ngModel)]="languageLetter.isUpper" placeholder="Не установлено"/>
+      <!--
+      <select [ngModel]="languageLetter.isUpper">
+        <option value="">Не установлено</option>
+        <option value="false">Строчная</option>
+        <option value="true">Прописная</option>
+      </select> -->
+    </label>
+  </div>
+  
+
   <div>
     <label>Описание:
       <input [(ngModel)]="languageLetter.description" placeholder="Описание"/>
     </label>
-  </div>  
+  </div>
+
+  <div>
+    <label>Unicode:
+      <input [(ngModel)]="languageLetter.unicode" placeholder="Unicode"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Html:
+      <input [(ngModel)]="languageLetter.html" placeholder="Html"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Char:
+      <input [(ngModel)]="languageLetter.char" placeholder="Символ"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Английское наименование:
+      <input [(ngModel)]="languageLetter.nameEng" placeholder="NameEng"/>
+    </label>
+  </div>
+      
+  <div>
+    <label>Русское наименование:
+      <input [(ngModel)]="languageLetter.nameRus" placeholder="NameRus"/>
+    </label>
+  </div>
+
   <button (click)="goBack()">Назад</button>
   <button (click)="save()">Сохранить</button>
 </div>
