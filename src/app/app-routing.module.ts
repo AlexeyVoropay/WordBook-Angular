@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LanguageDetailComponent } from './language-detail/language-detail.component';
 import { LanguageLetterDetailComponent } from './languageLetter-detail/languageLetter-detail.component';
 import { ConversionDetailComponent } from './conversion-detail/conversion-detail.component';
+import { DialogOverviewExample, DialogOverviewExampleDialog} from './dialog-overview/dialog-overview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'languages/:id/letters/:id', component: LanguageLetterDetailComponent },
   { path: 'languages/:id/words', component: LanguageWordsComponent },
   { path: 'conversions/:id', component: ConversionDetailComponent },
-  { path: 'conversions', component: ConversionsComponent },    
+  { path: 'conversions', component: ConversionsComponent },
+  { path: 'dialog', component: DialogOverviewExample },
 ];
 
 @NgModule({

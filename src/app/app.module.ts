@@ -20,13 +20,18 @@ import { ConversionDetailComponent }  from './conversion-detail/conversion-detai
 import { LanguageSearchComponent }  from './language-search/language-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 
+import { DemoMaterialModule } from './material-module';
+import { DialogOverviewExample, DialogOverviewExampleDialog} from './dialog-overview/dialog-overview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    DemoMaterialModule,
+    BrowserAnimationsModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -45,7 +50,9 @@ import { MessagesComponent }    from './messages/messages.component';
     MessagesComponent,
     LanguageSearchComponent,
     ConversionDetailComponent,
-	  ConversionsComponent
+    ConversionsComponent,
+    DialogOverviewExample, 
+    DialogOverviewExampleDialog
   ],
   bootstrap: [ AppComponent ]
 })
