@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LanguagesComponent } from './languages/languages.component';
 import { LanguageLettersComponent } from './languageLetters/languageLetters.component';
+import { LanguageWordDetailComponent } from './languageWord-detail/languageWord-detail.component';
 import { LanguageWordsComponent } from './languageWords/languageWords.component';
 import { ConversionsComponent } from './conversions/conversions.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,9 +17,10 @@ const routes: Routes = [
   { path: 'languages', component: LanguagesComponent },
   { path: 'languages/:id/letters', component: LanguageLettersComponent },
   { path: 'languages/:id/letters/:id', component: LanguageLetterDetailComponent },
-  { path: 'languages/:id/words', component: LanguageWordsComponent },
+  { path: 'languages/:id/words', component: LanguageWordsComponent },  
   { path: 'conversions/:id', component: ConversionDetailComponent },
-  { path: 'conversions', component: ConversionsComponent },    
+  { path: 'conversions', component: ConversionsComponent },
+  { path: 'words/:id', component: LanguageWordDetailComponent },
 ];
 
 @NgModule({

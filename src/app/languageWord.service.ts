@@ -32,6 +32,23 @@ export class LanguageWordService {
       );
   }
 
+  /** GET language by id. Will 404 if id not found */
+  getLanguageWord(id: number): Observable<LanguageWord> {
+    const url = `${this.languageWordsUrl}/${id}`;
+    return this.http.get<LanguageWord>(url).pipe(
+      tap(_ => this.log(`fetched languageWord id=${id}`)),
+      catchError(this.handleError<LanguageWord>(`getLanguageWord id=${id}`))
+    );
+  }
+
+  /** PUT: update the language on the server */
+  updateLanguageWord (languageWord: LanguageWord): Observable<any> {
+    return this.http.put(this.languageWordsUrl, languageWord, httpOptions).pipe(
+      tap(_ => this.log(`updated languageWord id=${languageWord.id}`)),
+      catchError(this.handleError<any>('updateLanguageWord'))
+    );
+  }
+
   // /** GET language by id. Return `undefined` when id not found */
   // getLanguageNo404<Data>(id: number): Observable<Language> {
   //   const url = `${this.languagesUrl}/?id=${id}`;

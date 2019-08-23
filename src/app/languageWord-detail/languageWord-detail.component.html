@@ -1,0 +1,53 @@
+<div *ngIf="languageWord">
+  <h2>{{languageWord.name | uppercase}} - Подробно</h2>
+  <div><small><span>Идентификатор: </span>{{languageWord.id}}</small></div>
+  <!-- <div>
+    <label>Номер:
+      <input [(ngModel)]="languageWord.number" placeholder="Номер"/>
+    </label>
+  </div> -->
+  <div>
+    <label>Наименование:
+      <input [(ngModel)]="languageWord.name" placeholder="Наименование"/>
+    </label>
+  </div>
+<!-- 
+  <div>
+    <label>Описание:
+      <input [(ngModel)]="languageWord.description" placeholder="Описание"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Unicode:
+      <input [(ngModel)]="languageWord.unicode" placeholder="Unicode"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Html:
+      <input [(ngModel)]="languageWord.html" placeholder="Html"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Char:
+      <input [(ngModel)]="languageWord.char" placeholder="Символ"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Английское наименование:
+      <input [(ngModel)]="languageWord.nameEng" placeholder="NameEng"/>
+    </label>
+  </div>
+      
+  <div>
+    <label>Русское наименование:
+      <input [(ngModel)]="languageWord.nameRus" placeholder="NameRus"/>
+    </label>
+  </div> -->
+
+  <button (click)="goBack()">Назад</button>
+  <button (click)="save()">Сохранить</button>
+</div>

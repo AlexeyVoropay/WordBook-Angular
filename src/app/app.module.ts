@@ -12,6 +12,7 @@ import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { LanguageDetailComponent }  from './language-detail/language-detail.component';
 import { LanguageLetterDetailComponent }  from './languageLetter-detail/languageLetter-detail.component';
+import { LanguageWordDetailComponent } from './languageWord-detail/languageWord-detail.component';
 import { LanguagesComponent }      from './languages/languages.component';
 import { LanguageLettersComponent }      from './languageLetters/languageLetters.component';
 import { LanguageWordsComponent }      from './languageWords/languageWords.component';
@@ -20,13 +21,15 @@ import { ConversionDetailComponent }  from './conversion-detail/conversion-detai
 import { LanguageSearchComponent }  from './language-search/language-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 
+import {DemoMaterialModule} from './material-module';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    DemoMaterialModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -42,10 +45,11 @@ import { MessagesComponent }    from './messages/messages.component';
     LanguageWordsComponent,
     LanguageDetailComponent,
     LanguageLetterDetailComponent,
+    LanguageWordDetailComponent,
     MessagesComponent,
     LanguageSearchComponent,
     ConversionDetailComponent,
-	  ConversionsComponent
+    ConversionsComponent    
   ],
   bootstrap: [ AppComponent ]
 })
