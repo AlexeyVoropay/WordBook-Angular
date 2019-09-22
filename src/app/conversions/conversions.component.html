@@ -15,7 +15,8 @@
     <a routerLink="/conversions/{{conversion.id}}">
       <span class="badge">{{conversion.id}}</span> {{conversion.name}}
     </a>
+    <button class="delete" routerLink="/conversions/{{conversion.id}}/pairs">Настроить</button>
     <button class="delete" title="delete conversion"
-        (click)="delete(conversion)">x</button>
+        (click)="delete(conversion)">x</button>    
   </li>
 </ul>

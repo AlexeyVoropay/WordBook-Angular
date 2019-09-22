@@ -14,7 +14,7 @@ const httpOptions = {
 };
 
 @Injectable({ providedIn: 'root' })
-export class ConversionService {
+export class ConversionPairService {
 
   private conversionsUrl = globalConstants.apiHost + 'conversions';  // URL to web api
 
@@ -24,7 +24,8 @@ export class ConversionService {
 
   /** GET conversionPairs from the server */
   getConversionPairs (conversionId: number): Observable<ConversionPair[]> {
-    return this.http.get<ConversionPair[]>(this.conversionsUrl)
+    const url = `${this.conversionsUrl}/${conversionId}/pairs`;
+    return this.http.get<ConversionPair[]>(url)
       .pipe(
         tap(_ => this.log('fetched conversionPairs')),
         catchError(this.handleError<ConversionPair[]>('getConversionPairs', []))

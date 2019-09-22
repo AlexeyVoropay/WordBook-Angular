@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LanguageDetailComponent } from './language-detail/language-detail.component';
 import { LanguageLetterDetailComponent } from './languageLetter-detail/languageLetter-detail.component';
 import { ConversionDetailComponent } from './conversion-detail/conversion-detail.component';
+import { ConversionPairsComponent } from './conversionPairs/conversionPairs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'languages/:id/letters', component: LanguageLettersComponent },
   { path: 'languages/:id/letters/:id', component: LanguageLetterDetailComponent },
   { path: 'languages/:id/words', component: LanguageWordsComponent },  
-  { path: 'conversions/:id', component: ConversionDetailComponent },
   { path: 'conversions', component: ConversionsComponent },
+  { path: 'conversions/:id', component: ConversionDetailComponent },
+  { path: 'conversions/:id/pairs', component: ConversionPairsComponent },  
   { path: 'words/:id', component: LanguageWordDetailComponent },
 ];
 
