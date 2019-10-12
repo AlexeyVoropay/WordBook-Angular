@@ -46,6 +46,17 @@ export class ConversionPairsComponent implements OnInit {
   //     });
   // }
 
+  add(part1: string, part2: string): void {
+    part1 = part1.trim();
+    part2 = part2.trim();
+    if (!part1 && !part2) { return; }
+    var conversionId = +this.route.snapshot.paramMap.get('id');
+    this.conversionPairService.addConversionPair({ conversionId, part1, part2 } as ConversionPair)
+      .subscribe(conversionPair => {
+        this.conversionPairs.push(conversionPair);
+      });
+  }
+
   
 // delete(language: Language): void {
 //   this.languages = this.languages.filter(h => h !== language);

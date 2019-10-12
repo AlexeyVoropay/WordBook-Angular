@@ -1,21 +1,21 @@
 <h2>Слова языка</h2>
 
-<!-- <div>
+<div>
   <div>
-    <label>Наименование:
-      <input #languageName />
+    <label>Часть 1:
+      <input #part1 />
     </label>
   </div>
   <div>
-    <label>Описание:
-      <input #languageDescription />
+    <label>Часть 2:
+      <input #part2 />
     </label>
-  </div>-->
+  </div>
   <!-- (click) passes input value to add() and then clears the input -->
-  <!-- <button (click)="add(languageName.value, languageDescription.value); languageName.value=''; languageDescription.value=''">
+  <button (click)="add(part1.value, part2.value); part1.value=''; part2.value=''">
     Добавить
   </button>
-</div> -->
+</div>
 
 <ul class="conversionPairs">
   <li *ngFor="let pair of conversionPairs">

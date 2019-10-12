@@ -32,6 +32,15 @@ export class ConversionPairService {
       );
   }
 
+  /** POST: add a new language to the server */
+  addConversionPair (conversionPair: ConversionPair): Observable<ConversionPair> {
+    const url = `${this.conversionsUrl}/${conversionPair.conversionId}/pairs`;
+    return this.http.post<ConversionPair>(url, conversionPair, httpOptions).pipe(
+      tap((newConversionPair: ConversionPair) => this.log(`added conversionPair w/ id=${newConversionPair.id}`)),
+      catchError(this.handleError<ConversionPair>('addConversionPair'))
+    );
+  }
+
   // /** GET conversion by id. Will 404 if id not found */
   // getConversion(id: number): Observable<Conversion> {
   //   const url = `${this.conversionsUrl}/${id}`;
