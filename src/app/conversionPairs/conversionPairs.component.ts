@@ -58,9 +58,9 @@ export class ConversionPairsComponent implements OnInit {
   }
 
   
-// delete(language: Language): void {
-//   this.languages = this.languages.filter(h => h !== language);
-//   this.languageLetterService.deleteLanguage(language).subscribe();
-//   }
+ delete(conversionPair: ConversionPair): void {
+   this.conversionPairs = this.conversionPairs.filter(h => h !== conversionPair);
+   this.conversionPairService.deleteConversionPair(conversionPair).subscribe();
+   }
 
 }

@@ -41,6 +41,16 @@ export class ConversionPairService {
     );
   }
 
+  /** DELETE: delete the language from the server */
+  deleteConversionPair (conversionPair: ConversionPair): Observable<ConversionPair> {
+    const id = conversionPair.id;
+    const url = `${this.conversionsUrl}/${conversionPair.conversionId}/pairs/${id}`;
+    return this.http.delete<ConversionPair>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted conversionPair id=${id}`)),
+      catchError(this.handleError<ConversionPair>('deleteConversionPair'))
+    );
+  }
+
   // /** GET conversion by id. Will 404 if id not found */
   // getConversion(id: number): Observable<Conversion> {
   //   const url = `${this.conversionsUrl}/${id}`;
