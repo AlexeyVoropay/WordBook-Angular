@@ -7,6 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { LanguageLetter } from './languageLetter';
 import { MessageService } from './message.service';
 
+import * as globalConstants from './constants';
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -14,8 +16,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class LanguageLetterService {
 
-  private languageLettersUrl = 'http://localhost:50473/api/letters';  // URL to web api
-  //private languageLettersUrl = 'http://alexey.somee.com/api/letters';  // URL to web api
+  private languageLettersUrl = globalConstants.apiHost + 'letters';  // URL to web api
 
   constructor(
     private http: HttpClient,
