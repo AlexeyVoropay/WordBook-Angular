@@ -21,10 +21,10 @@ export class LanguageLetterDetailComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    this.getLanguage();
+    this.getLanguageLetter();
   }
 
-  getLanguage(): void {
+  getLanguageLetter(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.languageLetterService.getLanguageLetter(id)
       .subscribe(languageLetter => this.languageLetter = languageLetter);

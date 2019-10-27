@@ -19,6 +19,7 @@ import { LanguageWordsComponent }      from './languageWords/languageWords.compo
 import { ConversionsComponent }      from './conversions/conversions.component';
 import { ConversionPairsComponent }      from './conversionPairs/conversionPairs.component';
 import { ConversionDetailComponent }  from './conversion-detail/conversion-detail.component';
+import { ConversionPairDetailComponent }  from './conversionPair-detail/conversionPair-detail.component';
 import { LanguageSearchComponent }  from './language-search/language-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 
@@ -51,7 +52,8 @@ import {DemoMaterialModule} from './material-module';
     LanguageSearchComponent,
     ConversionDetailComponent,
     ConversionsComponent,
-    ConversionPairsComponent
+    ConversionPairsComponent,
+    ConversionPairDetailComponent
   ],
   bootstrap: [ AppComponent ]
 })

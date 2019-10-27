@@ -32,6 +32,15 @@ export class ConversionPairService {
       );
   }
 
+  /** GET language by id. Will 404 if id not found */
+  getConversionPair(conversionId: number, id: number): Observable<ConversionPair> {
+    const url = `${this.conversionsUrl}/${conversionId}/pairs/${id}`;
+    return this.http.get<ConversionPair>(url).pipe(
+      tap(_ => this.log(`fetched ConversionPair id=${id}`)),
+      catchError(this.handleError<ConversionPair>(`getConversionPair id=${id}`))
+    );
+  }
+
   /** POST: add a new language to the server */
   addConversionPair (conversionPair: ConversionPair): Observable<ConversionPair> {
     const url = `${this.conversionsUrl}/${conversionPair.conversionId}/pairs`;

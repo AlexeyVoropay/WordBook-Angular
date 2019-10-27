@@ -10,6 +10,7 @@ import { LanguageDetailComponent } from './language-detail/language-detail.compo
 import { LanguageLetterDetailComponent } from './languageLetter-detail/languageLetter-detail.component';
 import { ConversionDetailComponent } from './conversion-detail/conversion-detail.component';
 import { ConversionPairsComponent } from './conversionPairs/conversionPairs.component';
+import { ConversionPairDetailComponent } from './conversionPair-detail/conversionPair-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'conversions', component: ConversionsComponent },
   { path: 'conversions/:id', component: ConversionDetailComponent },
   { path: 'conversions/:id/pairs', component: ConversionPairsComponent },  
+  { path: 'conversions/:id/pairs/:id', component: ConversionPairDetailComponent },  
   { path: 'words/:id', component: LanguageWordDetailComponent },
 ];
 

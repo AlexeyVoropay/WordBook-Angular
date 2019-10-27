@@ -1,0 +1,16 @@
+<div *ngIf="conversionPair">
+  <h2>{{conversionPair.conversionId | uppercase}} - ConversionId</h2>
+  <div><span>Идентификатор: </span>{{conversionPair.id}}</div>
+  <div>
+    <label>Текст 1:
+      <input [(ngModel)]="conversionPair.part1" placeholder="Текст"/>
+    </label>
+  </div>
+  <div>
+    <label>Текст 2:
+      <input [(ngModel)]="conversionPair.part2" placeholder="Текст"/>
+    </label>
+  </div>  
+  <button (click)="goBack()">Назад</button>
+  <button (click)="save()">Сохранить</button>
+</div>

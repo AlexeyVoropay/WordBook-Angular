@@ -19,7 +19,7 @@
 
 <ul class="conversionPairs">
   <li *ngFor="let pair of conversionPairs">
-    <a routerLink="/pairs/{{pair.id}}/">
+    <a routerLink="{{pair.id}}">
       <span class="badge">{{pair.id}}</span> {{pair.part1}} - {{pair.part2}}
     </a>
     <button class="delete" title="delete pair"
