@@ -1,4 +1,4 @@
-<h2>Языки</h2>
+<h2>Транслитераторы</h2>
 
 <div>
   <label>Наименование языка:
@@ -16,6 +16,7 @@
       <span class="badge">{{conversion.id}}</span> {{conversion.name}}
     </a>
     <button class="delete" routerLink="/conversions/{{conversion.id}}/pairs">Настроить</button>
+    <button class="delete" routerLink="/conversions/{{conversion.id}}/transliterator">Преобразовать</button>
     <button class="delete" title="delete conversion"
         (click)="delete(conversion)">x</button>    
   </li>

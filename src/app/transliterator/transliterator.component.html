@@ -1,0 +1,48 @@
+<h2>Слова языка</h2>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Start"/>
+  <span class="input-group-addon">-</span>
+  <input type="text" class="form-control" placeholder="End"/>
+</div>
+
+<div class = "tablebox">
+      
+  <form>
+ <label for="emailaddress">address</label>
+ <textarea cols="73" rows="12" name="descr">This is demo page</textarea><br />
+ 
+ <label for="comments">About you </label>
+ <textarea name="comments">This is demo page</textarea><br />
+ 
+ </form>
+ 
+ 
+ </div>
+ 
+<div>
+  <div>
+    <label>Часть 1:
+      <input #part1 />
+    </label>
+  </div>
+  <div>
+    <label>Часть 2:
+      <input #part2 />
+    </label>
+  </div>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(part1.value, part2.value); part1.value=''; part2.value=''">
+    Добавить
+  </button>
+</div>
+
+<ul class="conversionPairs">
+  <li *ngFor="let pair of conversionPairs">
+    <a routerLink="{{pair.id}}">
+      <span class="badge">{{pair.id}}</span> {{pair.part1}} - {{pair.part2}}
+    </a>
+    <button class="delete" title="delete pair"
+        (click)="delete(pair)">x</button>
+  </li>
+</ul>

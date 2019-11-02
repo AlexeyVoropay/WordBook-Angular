@@ -18,12 +18,15 @@ import { LanguageLettersComponent }      from './languageLetters/languageLetters
 import { LanguageWordsComponent }      from './languageWords/languageWords.component';
 import { ConversionsComponent }      from './conversions/conversions.component';
 import { ConversionPairsComponent }      from './conversionPairs/conversionPairs.component';
+import { TransliteratorComponent }      from './transliterator/transliterator.component';
 import { ConversionDetailComponent }  from './conversion-detail/conversion-detail.component';
 import { ConversionPairDetailComponent }  from './conversionPair-detail/conversionPair-detail.component';
 import { LanguageSearchComponent }  from './language-search/language-search.component';
 import { MessagesComponent }    from './messages/messages.component';
+import { PaginatorConfigurableExample } from './paginator/paginator-configurable-example';
+import { ConverterComponent } from './converter/converter.component';
 
-import {DemoMaterialModule} from './material-module';
+import { DemoMaterialModule } from './material-module';
 
 @NgModule({
   imports: [
@@ -39,9 +42,13 @@ import {DemoMaterialModule} from './material-module';
       InMemoryDataService, { dataEncapsulation: false }
     )*/
   ],
+  entryComponents: [PaginatorConfigurableExample],
+  //declarations: [PaginatorConfigurableExample],
+  //bootstrap: [PaginatorConfigurableExample],
   declarations: [
     AppComponent,
     DashboardComponent,
+    PaginatorConfigurableExample,
     LanguagesComponent,
     LanguageLettersComponent,
     LanguageWordsComponent,
@@ -53,8 +60,10 @@ import {DemoMaterialModule} from './material-module';
     ConversionDetailComponent,
     ConversionsComponent,
     ConversionPairsComponent,
-    ConversionPairDetailComponent
+    TransliteratorComponent,
+    ConversionPairDetailComponent,
+    ConverterComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent, PaginatorConfigurableExample ]
 })
 export class AppModule { }

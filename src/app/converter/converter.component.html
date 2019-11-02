@@ -1,0 +1,33 @@
+<h2>Конвертер</h2>
+
+<div>
+  <div>
+    <label>222Наименование:
+      <input #languageName />
+    </label>
+  </div>
+  <div>
+    <label>333Описание:
+      <input #languageDescription />
+    </label>
+  </div>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(languageName.value, languageDescription.value); languageName.value=''; languageDescription.value=''">
+    Добавить
+  </button>
+</div>
+
+<!-- <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group> -->
+
+<ul class="languages">
+  <li>
+    <a routerLink="/languages">
+      <span class="badge">language.id</span> language.name      
+    </a>
+    <button class="delete" routerLink="/languages/letters">Буквы</button>
+    <button class="delete" routerLink="/languages/words">Слова</button>    
+  </li>
+</ul>
