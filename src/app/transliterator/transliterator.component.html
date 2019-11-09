@@ -1,24 +1,16 @@
 <h2>Слова языка</h2>
 
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Start"/>
-  <span class="input-group-addon">-</span>
-  <input type="text" class="form-control" placeholder="End"/>
+<div>
+ <input matInput [(ngModel)]="startText">
+ <input matInput [(ngModel)]="newText">
+ <button (click)="getTransliterationText(startText);">Добавить</button>
 </div>
-
-<div class = "tablebox">
-      
-  <form>
+<!-- 
  <label for="emailaddress">address</label>
- <textarea cols="73" rows="12" name="descr">This is demo page</textarea><br />
- 
- <label for="comments">About you </label>
- <textarea name="comments">This is demo page</textarea><br />
- 
- </form>
- 
- 
- </div>
+    <input #startText>This is demo page 1</textarea><br />
+    <label for="emailaddress">address</label>
+    <input #newText>This is demo page 2</textarea><br />
+     -->
  
 <div>
   <div>

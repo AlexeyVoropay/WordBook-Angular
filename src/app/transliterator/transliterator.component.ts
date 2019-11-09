@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConversionPair } from '../conversionPair';
 import { ConversionPairService } from '../conversionPair.service';
+import { ConversionService } from '../conversion.service';
 
 @Component({
   selector: 'app-transliterator',
@@ -10,10 +11,13 @@ import { ConversionPairService } from '../conversionPair.service';
 })  
 export class TransliteratorComponent implements OnInit {	
   conversionPairs: ConversionPair[];
+  startText: string;
+  newText: string;
 
   constructor(
     private route: ActivatedRoute,
-    private conversionPairService: ConversionPairService
+    private conversionService: ConversionService,
+    private conversionPairService: ConversionPairService,
   ) {}
   
   ngOnInit() {
@@ -56,7 +60,16 @@ export class TransliteratorComponent implements OnInit {
         this.conversionPairs.push(conversionPair);
       });
   }
-
+  
+  getTransliterationText(text: string): void {
+    text = text.trim();
+    if (!text) { return; }
+    var conversionId = +this.route.snapshot.paramMap.get('id');
+    this.conversionService.сonversionTextGet(conversionId, text)
+      .subscribe(text => {
+        this.newText = text;
+      });
+  }
   
  delete(conversionPair: ConversionPair): void {
    this.conversionPairs = this.conversionPairs.filter(h => h !== conversionPair);

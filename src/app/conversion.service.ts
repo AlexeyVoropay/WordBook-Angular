@@ -75,6 +75,15 @@ export class ConversionService {
       catchError(this.handleError<Conversion>('addConversion'))
     );
   }
+  
+  /** POST: get a conversion text to the server */
+  сonversionTextGet (сonversionId: number, text: string): Observable<string> {
+    const url = `${globalConstants.apiHost}ConversionsTexts?conversionId=${сonversionId}`;
+    return this.http.post<string>(url, `\"${text}\"`, httpOptions).pipe(
+      tap((newText: string) => this.log(`got conversionText w/ id=Empty`)),
+      catchError(this.handleError<string>('get Conversion Text'))
+    );
+  }
 
   /** DELETE: delete the conversion from the server */
   deleteConversion (conversion: Conversion | number): Observable<Conversion> {
