@@ -1,3 +1,9 @@
+/*stargt paginator*/
+mat-form-field {
+  margin-right: 12px;
+}
+/*end paginator*/
+
 /* LanguagesComponent's private CSS styles */
 .languageWords {
   margin: 0 0 2em 0;
