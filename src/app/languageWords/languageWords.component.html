@@ -1,3 +1,10 @@
+
+
+<mat-paginator [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
 <h2>Слова языка</h2>
 
 <!-- <div>
@@ -18,7 +25,7 @@
 </div> -->
 
 <ul class="languageWords">
-  <li *ngFor="let word of languageWords">
+  <li *ngFor="let word of wordsResponse.words">
     <a routerLink="/words/{{word.id}}/">
       <span class="badge">{{word.id}}</span> {{word.name}}
     </a>

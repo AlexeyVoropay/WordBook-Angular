@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LanguageWord } from '../languageWord';
 import { LanguageWordService } from '../languageWord.service';
+import { WordsResponse } from '../wordsResponse';
 
 @Component({
   selector: 'app-languageWords',
@@ -9,7 +9,7 @@ import { LanguageWordService } from '../languageWord.service';
   styleUrls: ['./languageWords.component.css']
 })  
 export class LanguageWordsComponent implements OnInit {	
-  languageWords: LanguageWord[];
+  wordsResponse: WordsResponse;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,13 +17,14 @@ export class LanguageWordsComponent implements OnInit {
   ) {}
   
   ngOnInit() {
-    this.getLanguageWords();
+    this.getWordsResponse();
   }
 
-  getLanguageWords(): void {
+  getWordsResponse(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-	  this.languageWordService.getLanguageWords(id)
-    .subscribe(languageWords => this.languageWords = languageWords);
+	  this.languageWordService.getLanguageWordsResponse(id, 0, 10)
+    .subscribe(wordsResponse => 
+      {this.wordsResponse = wordsResponse;});
   }
 
   /*

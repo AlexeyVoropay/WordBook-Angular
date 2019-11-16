@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { LanguageWord } from './languageWord';
+import { WordsResponse } from './wordsResponse';
 import { MessageService } from './message.service';
 
 import * as globalConstants from './constants';
@@ -21,6 +22,15 @@ export class LanguageWordService {
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
+
+    getLanguageWordsResponse(languageId: number, skip: number, take:number): Observable<WordsResponse> {
+      const url = `${this.languageWordsUrl}/response?languageId=${languageId}&skip=${skip}&take=${take}`;
+      return this.http.get<WordsResponse>(url)
+        .pipe(
+          tap(_ => this.log('fetched languageWordsResponse')),
+          catchError(this.handleError<WordsResponse>('getLanguageWordsResponse'))
+        );
+    }
 
   /** GET languageLetters by languageId from the server */
   /** Will 404 if id not found */

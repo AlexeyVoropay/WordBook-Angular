@@ -1,6 +1,6 @@
 <mat-form-field>
   List length:
-  <input matInput [(ngModel)]="length">
+  <input matInput [(ngModel)]="wordsResponse.paging.total">
 </mat-form-field>
 
 <mat-form-field>
@@ -14,7 +14,7 @@
          (ngModelChange)="setPageSizeOptions($event)">
 </mat-form-field>
 
-<mat-paginator [length]="length"
+<mat-paginator [length]="wordsResponse.paging.total"
               [pageSize]="pageSize"
               [pageSizeOptions]="pageSizeOptions"
               (page)="pageEvent = $event">
@@ -27,15 +27,7 @@
   <div>Page index: {{pageEvent.pageIndex}}</div>  
 </div>
 
-<div *ngIf="languages">
+<div *ngIf="wordsResponse">
   <h5>Page Change Event Properties</h5>
-  <div>languages.length: {{languages.length}}</div>
-  <div>languageslength: {{languageslength}}</div>
+  <div>wordsResponse.paging.total: {{wordsResponse.words[0].name}}</div>
 </div>
-
-
-
-
-<!-- Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->

@@ -79,7 +79,7 @@ export class ConversionService {
   /** POST: get a conversion text to the server */
   сonversionTextGet (сonversionId: number, text: string): Observable<string> {
     const url = `${globalConstants.apiHost}ConversionsTexts?conversionId=${сonversionId}`;
-    return this.http.post<string>(url, `\"${text}\"`, httpOptions).pipe(
+    return this.http.post<string>(url, JSON.stringify(text), httpOptions).pipe(
       tap((newText: string) => this.log(`got conversionText w/ id=Empty`)),
       catchError(this.handleError<string>('get Conversion Text'))
     );
