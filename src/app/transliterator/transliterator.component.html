@@ -1,9 +1,10 @@
-<h2>Слова языка</h2>
+<h2>Транслитерация</h2>
 
 <div>
- <input matInput [(ngModel)]="startText">
- <input matInput [(ngModel)]="newText">
- <button (click)="getTransliterationText(startText);">Добавить</button>
+ <textarea matInput [(ngModel)]="startText" rows="5" cols="40" placeholder="Начальный текст"></textarea>
+ <textarea matInput [(ngModel)]="newText" rows="5" cols="40" placeholder="Конечный текст"></textarea>
+ <br>
+ <button (click)="getTransliterationText(startText);">Преобразовать</button>
 </div>
 <!-- 
  <label for="emailaddress">address</label>
