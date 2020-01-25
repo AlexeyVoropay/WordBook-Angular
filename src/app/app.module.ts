@@ -22,6 +22,7 @@ import { TransliteratorComponent }      from './transliterator/transliterator.co
 import { ConversionDetailComponent }  from './conversion-detail/conversion-detail.component';
 import { ConversionPairDetailComponent }  from './conversionPair-detail/conversionPair-detail.component';
 import { LanguageSearchComponent }  from './language-search/language-search.component';
+import { LanguageWordSearchComponent }  from './languageWord-search/languageWord-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { PaginatorConfigurableExample } from './paginator/paginator-configurable-example';
 import { ConverterComponent } from './converter/converter.component';
@@ -57,6 +58,7 @@ import { DemoMaterialModule } from './material-module';
     LanguageWordDetailComponent,
     MessagesComponent,
     LanguageSearchComponent,
+    LanguageWordSearchComponent,
     ConversionDetailComponent,
     ConversionsComponent,
     ConversionPairsComponent,
